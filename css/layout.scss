@@ -1,0 +1,77 @@
+// Grid Settings
+$grid-columns: 12;
+$gutter: 10px; // Implemented as padding so this number should be 1/2 desired gutter
+$max-width: 1000px;
+
+@function columns($number, $grid-size: $grid-columns) {
+   @return percentage($number / $grid-size);
+}
+
+.columns {
+	box-sizing: border-box;
+	float: left;
+	padding: 0 $gutter;
+	position: relative;
+}
+.columns:last-child {
+	float: right;
+}
+.columns.end {
+	float: left;
+}
+.columns.centered {
+	float: none; 
+	margin: 0 auto;
+}
+.row {
+	margin: 0 auto;
+	max-width: $max-width;
+	width: auto;
+}
+.row:after {
+	content: "";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.row .row {
+	margin: 0 (-$gutter);
+}
+
+@media only screen and (min-width: 768px) {
+	@for $i from 1 through $grid-columns {
+	 	.columns.large-#{$i} { width: columns($i); }
+	}
+
+	@for $i from 1 through $grid-columns {
+	 	.columns.offset-#{$i} { margin-left: columns($i); }
+	}
+
+	@for $i from 1 through $grid-columns {
+	 	.columns.push-#{$i} { left: columns($i); }
+	}
+
+	@for $i from 1 through $grid-columns {
+	 	.columns.pull-#{$i} { right: columns($i); }
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.columns {
+		width: 100%;
+	}
+	.columns.small-1 {
+		width: columns(3); // 25%
+	}
+	.columns.small-2 {
+		width: columns(6); // 50%
+	}
+	.columns.small-3 {
+		width: columns(9); // 75%
+	}
+	.columns.small-4 {
+		width: columns(12); // 100%
+	}
+}
+

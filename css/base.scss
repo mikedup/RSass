@@ -1,0 +1,30 @@
+// Colors
+$color-gray-dark: #7f8c8d;
+$color-gray-light: #aab7b7;
+
+
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+
+$font-base: 16px;
+$font-base-line-height: 24px;
+
+@function em($target, $context: $font-base) {
+   @return #{$target / $context}em;
+}
+
+body {
+	color: #333;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: $font-base;
+	font-weight: 400;
+}
+h1, h2, h3, h4 {
+	font-weight: 300;
+}
+h1 {
+	font-size: em(42px);
+}
+h2 { 
+	margin-top: 35px;
+}
