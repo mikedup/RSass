@@ -75,3 +75,21 @@ $max-width: 1000px;
 	}
 }
 
+.block-grid { display: block; margin: 0 -10px; overflow: hidden; padding: 0; }
+.block-grid > li { box-sizing: border-box; display: block; height: auto; float: left; }
+
+.block-grid.two-items > li { width: 50%; padding: 0 10px 10px; }
+.block-grid.two-items > li:nth-child(2n+1) { clear: both; }
+
+.block-grid.three-items > li { width: 33.33333%; padding: 0 10px 10px; }
+.block-grid.three-items > li:nth-child(3n+1) { clear: both; }
+
+.block-grid.four-items > li { width: 25%; padding: 0 10px 10px; }
+.block-grid.four-items > li:nth-child(4n+1) { clear: both; }
+
+.block-grid.five-items > li { width: 20%; padding: 0 10px 10px; }
+.block-grid.five-items > li:nth-child(5n+1) { clear: both; }
+
+.block-grid.six-items > li { width: 16.66667%; padding: 0 10px 10px; }
+.block-grid.six-items > li:nth-child(6n+1) { clear: both; }
+
