@@ -1,7 +1,7 @@
 // Grid Settings
 $grid-columns: 12;
-$gutter: 10px; // Implemented as padding so this number should be 1/2 desired gutter
-$max-width: 1000px;
+$gutter: 1rem; // Implemented as padding so this number should be 1/2 desired gutter
+$max-width: 1000px; // Can be set to px or %
 
 @function columns($number, $grid-size: $grid-columns) {
    @return percentage($number / $grid-size);
@@ -36,7 +36,10 @@ $max-width: 1000px;
 	visibility: hidden;
 }
 .row .row {
-	margin: 0 (-$gutter);
+	margin-right: (-$gutter);
+	margin-left: (-$gutter);
+	max-width: none;
+	width: auto;
 }
 
 @media only screen and (min-width: 768px) {
