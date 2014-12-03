@@ -1,3 +1,3 @@
-# RSass
+# Chassis
 
- A CSS-only responsive grid built with Sass
+Responsive grid styles written with Sass
